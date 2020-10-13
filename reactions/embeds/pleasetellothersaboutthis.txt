@@ -1,5 +1,5 @@
 {
   "title": "please tell others about this",
-  "url": "http://blbz.xyz/images/reactions/pleasetellothersaboutthis.jpg",
+  "url": "https://www.youtube.com/watch?v=eAVpNs37Lpk",
   "image": "http://blbz.xyz/images/reactions/pleasetellothersaboutthis.jpg"
 }
