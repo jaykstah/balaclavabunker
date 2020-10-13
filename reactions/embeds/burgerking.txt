@@ -1,0 +1,9 @@
+{
+  "author": {
+    "name": "Burger King",
+    "url": "http://blbz.xyz/images/reactions/burgerking.gif"
+  },
+  "title": "Burger King",
+  "url": "http://blbz.xyz/images/reactions/burgerking.gif",
+  "image": "http://blbz.xyz/images/reactions/burgerking.gif"
+}
