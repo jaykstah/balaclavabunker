@@ -128,5 +128,6 @@ ___
 - List relevant changes in a formatted announcement on Discord in `#bot-commands-admin`
 - Specify in the announcement if the client must use a newer version of Minecraft to connect, or if the server is held back to a previous version
 - Review for errors and submit via Bastion's reaction pinning function
+- Edit version number on [blbz minecraft homepage](https://blbz.xyz/minecraft) if game version is updated
 
 ___
