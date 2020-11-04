@@ -1,0 +1,7 @@
+{
+  "author": {
+    "name": "Greg",
+    "url": "https://blbz.xyz/images/reactions/greg.png"
+  },
+  "image": "https://blbz.xyz/images/reactions/greg.png"
+}
