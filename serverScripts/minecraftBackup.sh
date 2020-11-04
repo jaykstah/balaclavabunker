@@ -1,7 +1,15 @@
 #!/bin/bash
 # A very basic Minecraft Server Backup via rsync
-rm -r /media/balaclavabox/backups/minecraft/minecraftOlder
-mv /media/balaclavabox/backups/minecraft/minecraftOld /media/balaclavabox/backups/minecraft/minecraftOlder
-mv /media/balaclavabox/backups/minecraft/minecraftCurrent /media/balaclavabox/backups/minecraft/minecraftOld
-mkdir /media/balaclavabox/backups/minecraft/minecraftCurrent
-rsync -av /media/balaclavabunker/servers/minecraftVanilla /media/balaclavabox/backups/minecraft/minecraftCurrent --info=progress2
+
+# Setting Variables
+minecraftOlder=/media/balaclavabox/backups/minecraft/minecraftOlder 
+minecraftOld=/media/balaclavabox/backups/minecraft/minecraftOld
+minecraftCurrent=/media/balaclavabox/backups/minecraft/minecraftCurrent
+minecraftVanilla=/media/balaclavabunker/servers/minecraftVanilla
+
+# Running backup routine
+rm -r $minecraftOlder
+mv $minecraftOld $minecraftOlder
+mv $minecraftCurrent $minecraftOld
+mkdir $minecraftCurrent
+rsync -av $minecraftVanilla $minecraftCurrent --info=progress2
