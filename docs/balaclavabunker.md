@@ -9,10 +9,10 @@ ___
 - [Web](#web)
 - [File Sharing / Cloud storage](#files)
 
-####2. Update Procedures
-- BlaclavaBot
-- Minecraft
-- NextCloud
+####[2. Update Procedures](#updates)
+- [BlaclavaBot](#botUpdate)
+- [Minecraft](#minecraftUpdate)
+- [NextCloud](#nextcloudUpdate)
 
 ___
 <a id="services"></a>
@@ -70,7 +70,7 @@ ___
 ####WordPress
 WordPress is used to host the homepage at [https://blbz.xyz](https://blbz.xyz).
 WordPress has its own database and user for storing configurations.
-Its contents and all site data are located in `/var/www/html` with moth of its directory names beginning in `wp-`
+Its contents and all site data are located in `/var/www/html` with most of its directory names beginning in `wp-`
 <br>
 For maintenance, an admin can log in at [https://blbz.xyz/wp-admin](https://blbz.xyz/wp-admin) to view the dashboard.
 
@@ -99,11 +99,12 @@ A music share can be accessed via `192.168.1.15/musicShare`
 
 ___
 <br>
-
+<a id="updates"></a>
 ##Update Procedures
 
+<a id="botUpdate"></a>
 ###BalaclavaBot
-- Check BastionHQ announcements for any relevant informationk
+- Check BastionHQ announcements for any relevant information
 - Shutdown the bot with `./bastion.sh --stop`
 - Run an update from Bastion's directory with `./bastion.sh --update`
 - On completion of the update, start the bot with `./bastion.sh --start`
@@ -111,11 +112,12 @@ ___
 - Send an announcement in Discord `#announcements` if there is any important information regarding the new bot version.
 ___
 
+<a id="minecraftUpdate"></a>
 ###Minecraft
 
 ####Updating the Game
-- Download latest version of paper
-- Send newest paper version to `/media/balaclavabunker/servers/minecraftVanilla/paperBuilds`
+- Download latest version of Paper
+- Send newest Paper version to `/media/balaclavabunker/servers/minecraftVanilla/paperBuilds`
 - Remove currently used paper jarfile from vanilla server directory
 - Copy newest build from `paperBuilds` and place it in the main server directory as `paper.jar` so the server will use it
 
@@ -127,7 +129,7 @@ ___
 ####Post Update
 - List relevant changes in a formatted announcement on Discord in `#bot-commands-admin`
 - Specify in the announcement if the client must use a newer version of Minecraft to connect, or if the server is held back to a previous version
-- Review for errors and submit via Bastion's reaction pinning function
+- Review for errors and submit via BalaclavaBot's announcement pinning function
 - Edit version number on [blbz minecraft homepage](https://blbz.xyz/minecraft) if game version is updated
 
 ___
