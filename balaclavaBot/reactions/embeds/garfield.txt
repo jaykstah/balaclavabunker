@@ -1,0 +1,7 @@
+{
+  "author": {
+    "name": "Garfield",
+    "url": "https://blbz.xyz/images/reactions/garfield.jpg"
+  },
+  "image": "https://blbz.xyz/images/reactions/garfield.jpg"
+}
