@@ -26,6 +26,15 @@ ___
 Balaclavabot runs on a self-hosted instance of Bastion. 
 It is kept updated to the latest releases of Bastion, with minor changes in configuration.
 
+#####Responsibilities
+The main BalaclavaBot is currently used for a few specific responsibilities as follows:
+- Automatically assign users a role as they join the server
+- Usage of a level-up system for users in chat
+- Automatic responses triggered by certain phrases
+- Sending messages to the announcement channel
+
+It should be noted that other capabilities are currently disabled, such as music, as these will be handled by 'BalaclavaBeta', which runs on the Red bot. 
+
 #####Operation
 
 The bot and its configuration files are stored in `~/Bastion`
@@ -39,6 +48,7 @@ Available options:
 `--update` will run an update for Bastion. This includes the bot itself, the dependencies contained within its folder, and node modules that the bot uses.
 
 #####Configuration
+Currently the bot is configured to use `.` as a prefix for commands.
 
 The bot can be configured via `yaml` files located in `~/Bastion/settings`
 
@@ -50,6 +60,19 @@ The bot can be configured via `yaml` files located in `~/Bastion/settings`
 
 All commands for the bot can be found at [https://bastion.traction.one/commands](https://bastion.traction.one/commands)
 ___
+
+####BalaclavaBeta (Discord Bot)
+BalaclavaBeta runs on the Red discord bot (https://discord.red) and serves currently to fill the gaps in functionality that BalaclavaBot (running on Bastion) has.
+
+##### Responsibilities
+Primary use of this bot consist of:
+- Music
+
+##### Operation
+From a starting point, an admin must first execute `source ~/redenv/bin/activate` to make use of Red commands. This may require switching to bash first if there is a different shell in use by default.
+
+Once running in the Red environment, the bot can be started. The main installation of Red is denoted as BalaclavaRed.
+
 <a id="games"></a>
 ###Games
 ---
@@ -57,6 +80,11 @@ ___
 
 The main minecraft server is semi-vanilla, running on the [Paper](https://papermc.io/) platform.
 It uses minimal plugins for conveninece while preserving an overall Vanilla-esque experience.
+<br>
+To start the server: 
+- start a new terminal screen and move to `/media/balaclavabunker/servers/minecraftVanilla/`
+- press `CTL+A` then `CTL+:` and enter `sessionname minecraft`
+- execute `./start.sh` to startup the server. Watch the startup procedure for errors.
 <br>
 The server can be accessed by connecting to `blbz.xyz:25565` (default port) in-game. 
 A live map of the server, powered by the Dynmap plugin, can be viewed in a browser by going to [blbz.xyz:8123](http://blbz.xyz:8123)
@@ -92,6 +120,8 @@ Nextcloud itself is installed at `/var/www/nextcloud`
 Nextcloud data is stored externally at `/media/balaclavabunker/ncdata`
 The data directory contains user data and some configurations. It is on a separate physical disk from the install so that user data can be stored en masse without filling the root partition. 
 
+Some other media accessible from Nextcloud is stored in `/media/balaclavabox/` such as music, shows, and archives/backups.
+
 ---
 ####Local Shares (Samba)
 Samba shares are accessible on the local network for all users, in most cases.
@@ -114,17 +144,18 @@ ___
 
 <a id="minecraftUpdate"></a>
 ###Minecraft
+For the sake of brevity, `$minecraftVanilla` will be used to refer to the main server directory, which has a full path of `/media/balaclavabunker/servers/minecraftVanilla`
 
 ####Updating the Game
 - Download latest version of Paper
-- Send newest Paper version to `/media/balaclavabunker/servers/minecraftVanilla/paperBuilds`
-- Remove currently used paper jarfile from vanilla server directory
-- Copy newest build from `paperBuilds` and place it in the main server directory as `paper.jar` so the server will use it
+- Move the currently used `paper.jar` to `$minecraftVanilla/paperBuilds`
+- Send newest Paper version to `$minecraftVanilla/` and rename the jarfile to `paper.jar`
 
 ####Updating Plugins
 - Grab latest plugin versions from respective links at [https://blbz.xyz/minecraft](https://blbz.xyz/minecraft)
-- Move new plugins to `/media/balaclavabunker/servers/minecraftVanilla/pluginsStaging`
-- Once all current versions of plugins are placed in staging, run `minecraftPluginUpdate.sh` to commit staged plugins and backup previous plugin jarfiles.
+- Clean up by moving all jarfiles in `$minecraftVanilla/pluginsArchive` into `$minecraftVanilla/pluginsArchive/old`
+- Move currently installed plugins to `$minecraftVanilla/pluginsArchive` (`cd` into `minecraftVanilla/plugins` and make use of `mv *.jar ../pluginsArchive`)
+- Send newly downloaded plugins to `$minecraftVanilla/plugins` and restart server.
 
 ####Post Update
 - List relevant changes in a formatted announcement on Discord in `#bot-commands-admin`
@@ -132,4 +163,7 @@ ___
 - Review for errors and submit via BalaclavaBot's announcement pinning function
 - Edit version number on [blbz minecraft homepage](https://blbz.xyz/minecraft) if game version is updated
 
-___
+<a id="nextcloudUpdate"></a>
+###Nextcloud
+Most of the time Nextcloud can be updated via the web-based settings page. 
+If not, an update may need to be executed via `ocs` commands. Until this page is written further, it will be necessary to refer to Nextcloud documentation or instructions on the web-based settings page as to performing updates from the command line.
