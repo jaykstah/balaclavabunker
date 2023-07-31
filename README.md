@@ -11,6 +11,19 @@ BalaclavaBot is a self-hosted instance of the Red discord bot.
 
 This directory includes bash scripts I've written to automate maintenance / configuration tasks such as backing up game servers and running discord bots. 
 
+# Configuration
+
+## Setting directory paths
+
+Edit the file config/path.sh to set relevant paths for each script to use. 
+Paths are formatted as a bash variable like the example below:
+
+Variable Name       Path in Quotations (" ")
+` gmod_install_dir="/PATH/TO/GMOD/SERVER/" `
+
+Each script which needs a path from this config file should have
+`source ../config/path.sh` at the beginning to source these variables. 
+
 # Disclaimer
 
 I, Jaykstah, relinquish all liability for damage, data loss, or inconvenience caused by the usage of these scripts. 
