@@ -16,13 +16,13 @@ This directory includes bash scripts I've written to automate maintenance / conf
 I, Jaykstah, relinquish all liability for damage, data loss, or inconvenience caused by the usage of these scripts. 
 These tools are a work-in-progress and are designed to fulfill my needs for personal projects.
 
-Many of these tools are written in a way that is specific to my own setup. Using them as-is may cause problems in another system's environment.
+Many of these scripts are written in a way that is specific to my own setup. Using them as-is may cause problems in another system's environment.
 
-These tools and assets should be used as inspiration and carefully reviewed/modified as needed before use to ensure no damage or misconfiguration to the system occurs. 
+These scripts and assets should be used as inspiration and carefully reviewed/modified as needed before use to ensure no damage or misconfiguration to the system occurs. 
 
-If you, the "End User", chooses to download and utilize these tools, the "End User" assumes all responsibility for damage or data loss that may occur.
+If you, the "End User", chooses to download and utilize these scripts, the "End User" assumes all responsibility for damage or data loss that may occur as a result.
 
 Please review these scripts and assets carefully before deploying them on your own system. 
 
 I, Jaykstah, also allow anyone who downloads, uses, or modifies these scripts to freely redistribute them or repurpose them for other uses. 
-This colletion of tools and assets is meant to serve as inspiration for your own tools. 
+This colletion of scripts and assets is meant to serve as inspiration for ways to suppliment and automate your own home servers.
